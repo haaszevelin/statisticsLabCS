@@ -1,4 +1,4 @@
---- 
+---
 title: "Answering questions with data: Lab Manual"
 author: 
 - "Matthew J. C. Crump, Anjali Krishnan, Stephen Volz, and Alla Chavarga"
@@ -26,21 +26,19 @@ description: "A lab manual for Psyc 3400"
 knitr::opts_chunk$set(message=FALSE,warning=FALSE, cache=TRUE)
 ```
 
-
-# Preface {-}
+# Preface {.unnumbered}
 
 ```{r,eval=FALSE,echo=F,fig.align="center"}
 knitr::include_graphics("LabmanualCover.png")
 ```
 
-First Draft (version 0.9 = August 15th, 2018)
-Last Compiled: `r Sys.Date()`
+First Draft (version 0.9 = August 15th, 2018) Last Compiled: `r Sys.Date()`
 
 This is the companion lab to our free introductory statistics for undergraduates in psychology textbook, [Answering questions with data](https://crumplab.github.io/statistics/).
 
 This lab manual involves step by-step tutorials to solve data-analysis problems in software. We use open-data sets that are usually paired with a primary research article.
 
-Each lab has a separate guide for solving the problems in R & R-studio, Excel, SPSS, and JAMOVI.
+Each lab has a separate guide for solving the problems in R & R-studio, Excel, SPSS, JAMOVI and CogStat.
 
 The manual is a free and open resource. See below for more information about copying, making change, or contributing to the lab manual.
 
@@ -52,56 +50,55 @@ This lab manual is part of a larger OER course package for teaching undergraduat
 
 ### Attributions
 
-This lab manual was authored by Matt Crump (R exercises), Anjali Krishnan (JAMOVI exercises), Stephen Volz (EXCEL exercises), and Alla Chavarga (SPSS exercises).
+This lab manual was authored by Matt Crump (R exercises), Anjali Krishnan (JAMOVI exercises), Stephen Volz (EXCEL exercises), Alla Chavarga (SPSS exercises) and Evelin Haász (CogStat exercises).
 
 Labs 6, 7, and 8 were adapted and expanded from [Open Stats Labs](https://sites.trinity.edu/osl). Thanks to Open Stats Labs (Dr. Kevin P. McIntyre) for their fantastic work.
-
 
 ### CC BY-SA 4.0 license
 
 This license means that you are free to:
 
-- Share: copy and redistribute the material in any medium or format
-- Adapt: remix, transform, and build upon the material for any purpose, even commercially.
+-   Share: copy and redistribute the material in any medium or format
+-   Adapt: remix, transform, and build upon the material for any purpose, even commercially.
 
 The licensor cannot revoke these freedoms as long as you follow the license terms.
 
 Under the following terms:
 
-- Attribution: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
-- ShareAlike: If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
-- No additional restrictions: You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+-   Attribution: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+-   ShareAlike: If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+-   No additional restrictions: You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
 
 ### Copying the lab manual
 
-This lab manual was written in R-Studio, using R Markdown, and compiled into a web-book format using the bookdown package. 
+This lab manual was written in R-Studio, using R Markdown, and compiled into a web-book format using the bookdown package.
 
 All of the source code for compiling the book is available in the GitHub repository for this book:
 
-[https://github.com/CrumpLab/statisticsLab](https://github.com/CrumpLab/statisticsLab)
+<https://github.com/CrumpLab/statisticsLab>
 
 In principle, anybody could fork or otherwise download this repository. Load the Rproj file in R-studio, and then compile the entire book. Then, the individual .rmd files for each chapter could be edited for content and style to better suit your needs.
 
 If you want to contribute to this version of the lab manual, you could make pull requests on GitHub, or discuss issues and request on the issues tab.
 
-
 ### Acknowledgments
 
 Thanks to the librarians at Brooklyn College of CUNY, especially Miriam Deutch, and Emily Fairey, for their support throughout the process. Thanks to CUNY for supporting OER development, and for the grant we received to develop this work.
 
-# Software {-}
+# Software {.unnumbered}
 
+```{=html}
 <script>
 $("#coverpic").hide();
 </script>
-
+```
 ## Data
 
 Data files used for the labs are all taken from open data sources. Links are provided for each lab. For convenience, all of the data files are also available here as single files in the github repository for this lab manual
 
 ### Data Repository
 
-[https://github.com/CrumpLab/statisticsLab/tree/master/data](https://github.com/CrumpLab/statisticsLab/tree/master/data)
+<https://github.com/CrumpLab/statisticsLab/tree/master/data>
 
 ### CSV format
 
@@ -111,21 +108,19 @@ All of the data files in .csv format are also available to [download as a .zip f
 
 All of the data files in SPSS format are also available to [download as a .zip file](https://raw.githubusercontent.com/CrumpLab/statisticsLab/master/data/spssdata/spss_data.zip)
 
-
 ## R
 
-<div class="marginnote">
-
+::: marginnote
 ```{r 2rlogo, echo=FALSE,dev='png'}
 knitr::include_graphics('figures/rlogo.jpg')
 ```
-</div>
+:::
 
 In this course we will be using R as a tool to analyze data, and as a tool to help us gain a better understanding of what our analyses are doing. Throughout each lab we will show you how to use R to solve specific problems, and then you will use the examples to solve homework and lab assignments. R is a very deep programming language, and in many ways we will only be skimming the surface of what R can do. Along the way, there will be many pointers to more advanced techniques that interested students can follow to become experts in using R for data-analysis, and computer programming in general.
 
 R is primarily a computer programming language for statistical analysis. It is *free*, and *open-source* (many people contribute to developing it), and runs on most operating systems. It is a powerful language that can be used for all sorts of mathematical operations, data-processing, analysis, and graphical display of data. I even used R to write this lab manual. And, I use R all the time for my own research, because it makes data-analyis fast, efficient, transparent, reproducible, and exciting.
 
-<div class="marginnote">
+::: marginnote
 Statistics Software
 
 -   [SPSS](http://www-01.ibm.com/software/analytics/spss/)
@@ -134,8 +129,7 @@ Statistics Software
 -   [R](http://www.r-project.org)
 -   [Julia](http://julialang.org)
 -   [Matlab](http://www.mathworks.com/products/matlab/)
-
-</div>
+:::
 
 ### Why R?
 
@@ -151,16 +145,15 @@ After you have installed R on your computer, you should want to install another 
 
 Find the download link on the front-page, and then download R studio desktop version for your computer. After you have installed R studio you will be ready to start using R.
 
-<div class="marginnote">
+::: marginnote
 The website [R-fiddle](http://www.r-fiddle.org) allows you to run R scripts in the cloud, so you can practice R from your web-browser!
-</div>
+:::
 
 ### R studio notes and tips
 
 ```{r 2rstudiod, fig.cap="The R-studio workspace", echo=FALSE,dev='png'}
 knitr::include_graphics('figures/FigRstudio.pdf')
 ```
-
 
 #### Console
 
@@ -180,25 +173,25 @@ The bottom-right window has four tabs for files, plots, packages, and help. The 
 
 ### How to complete the R Labs
 
-Each of the labs focuses on particular data-analysis problems, from graphing data, computing descriptive statistics, to running inferential tests in R. All of the labs come in three parts, a training part, a generalization part, and a writing part. The training part includes step-by-step examples of R code that solves particular problems. The R code is always highlighted in grey. The generalization part gives short assignments to change parts of the provided code to solve a new problem. The writing part tasks you with answering questions about statitiscal concepts. 
+Each of the labs focuses on particular data-analysis problems, from graphing data, computing descriptive statistics, to running inferential tests in R. All of the labs come in three parts, a training part, a generalization part, and a writing part. The training part includes step-by-step examples of R code that solves particular problems. The R code is always highlighted in grey. The generalization part gives short assignments to change parts of the provided code to solve a new problem. The writing part tasks you with answering questions about statitiscal concepts.
 
 The way to complete each lab is to open a new R Markdown document in R-studio, and then document your progression through each of the parts. By doing this, you will become familiar with how R and R-studio works, and how to create documents that preserve both the code and your notes all in one place. There are a few tricks to getting started that are outline below.
 
-1. Open R-studio
+1.  Open R-studio
 
 #### R projects
 
-2. Create a new R project
-    a. Go to the file menu and select new project, or go to the top right-hand corner of  R-studio, you should see a blue cube with an R in it, then select New project from the dropdown menu
-3. Save the new R project somewhere that you can find it. If you are working on a lab computer, then save the new R project to the desktop.
+2.  Create a new R project
+    a.  Go to the file menu and select new project, or go to the top right-hand corner of R-studio, you should see a blue cube with an R in it, then select New project from the dropdown menu
+3.  Save the new R project somewhere that you can find it. If you are working on a lab computer, then save the new R project to the desktop.
 
 What is an R project? When you create a new R project you are creating two things, 1) a new folder on your computer, and 2) a ".Rproj" file. For example, if you gave your R project the name "Lab1", then you will have created a folder title "Lab1", and inside the folder you will find an R project file called "Lab1.Rproj".
 
 As you work inside R-studio you will be creating text documents, and you will be doing things like loading data, and saving the results of your analyses. As your work grows and becomes more complex, you can often find yourself creating many different files. **The R project folder is a very useful way of organizing your files all in one place so you can find them later.** If you double-clik an R project file, R-studio will automatically load and restore your last session. In the labs, you will be using your R project folder to:
 
-1. save data files into this folder
-2. save R-markdown files that you will use to write your R-code and lab notes
-3. save the results of your analysis
+1.  save data files into this folder
+2.  save R-markdown files that you will use to write your R-code and lab notes
+3.  save the results of your analysis
 
 #### Installing libraries
 
@@ -206,21 +199,21 @@ When you install R and R-studio, you get what is called Base R. Base R contains 
 
 For example, in any of the labs, whenever you see a line code that uses the word library like this `library(libraryname)`, this line of code telling R to load up that library so it can be used. The `libraryname` would be replaced with the actual name of the library. For example, you will see code like this in the labs:
 
-```
+```         
 library(data.table)
 ```
 
 This line of code is saying that the `data.table` library needs to be loaded. You can check to see if any library is already loaded by clicking on the "packages" tab in the bottom right hand panel. You will see many packages listed in alphabetical order. Packages that are currently loaded and available have a checkmark. If you scroll down and find that you **do not** have `data.table` installed, then you need to install it. To install any package follow these steps:
 
-1. Click on the packages tab
-2. Find the "install" button in the top left hand corner of the packages tab.
-3. Click the install button
-4. Make sure "install from:" is set to CRAN repository
-5. Make sure "dependencies" is clicked on (with a checkmark)
-6. type the name of the library into the search bar. 
-7. As you type, you should see the names of different packages you can install pop-up in a drop-down menu. **You must be connected to the internet to install packages from CRAN**
-8. Once you find the package (e.g., `data.table`), click it, or just make sure the full, correctly spelled name, is in the search bar
-9. Press the install button
+1.  Click on the packages tab
+2.  Find the "install" button in the top left hand corner of the packages tab.
+3.  Click the install button
+4.  Make sure "install from:" is set to CRAN repository
+5.  Make sure "dependencies" is clicked on (with a checkmark)
+6.  type the name of the library into the search bar.
+7.  As you type, you should see the names of different packages you can install pop-up in a drop-down menu. **You must be connected to the internet to install packages from CRAN**
+8.  Once you find the package (e.g., `data.table`), click it, or just make sure the full, correctly spelled name, is in the search bar
+9.  Press the install button
 
 You should see some text appear in the console while R installs the package.
 
@@ -232,7 +225,7 @@ You should see some text appear in the console while R installs the package.
 
 If you are using R on one of the lab computers, you may find that some of the packages are not installed. The lab computers get wiped everynight, so it may be necessary to install packages each time you come back to the lab. Fortunately, we can tell R to install all of the packages we need in one go. Copy the following lines of code into the console, and press enter. Note you can select all of the lines at once, then copy them, then paste all of them into the console, and press enter to run them all. After each of the packages are installed, you will then be able to load them using `library()`.
 
-```
+```         
 install.packages(ggplot2)
 install.packages(dplyr)
 install.packages(data.table)
@@ -245,7 +238,7 @@ install.packages(ggpubr)
 
 Once you have the necessary packages installed you can begin creating R markdown documents for each lab. We admit that at the beginning, R markdown documents might seem a little bit confusing, but you will find they are extremely useful and flexible. Basically, what R markdown allows you to do is combine two kinds of writing, 1) writing R code to conduct analyses, and 2) writing normal text, with headers, sub-headers, and paragraphs. You can think of this like a lab journal, that contains both your writing about what you are doing (e.g., notes to self), and the code that you use for analysis. Additionally, when your code does something like make a graph, or run a statistical test, you can ask R markdown to print the results.
 
-The R markdown website has an excellent tutorial that is well worth your time to check out: [https://rmarkdown.rstudio.com/lesson-1.html](https://rmarkdown.rstudio.com/lesson-1.html)
+The R markdown website has an excellent tutorial that is well worth your time to check out: <https://rmarkdown.rstudio.com/lesson-1.html>
 
 #### R markdown lab templates
 
@@ -253,19 +246,19 @@ We have created a set of template documents for each lab that can be downloaded 
 
 When you unzip the file you should find the following:
 
-1. A new folder titled "RMarkdownsLab"
-2. Inside the folder you will see the "RMarkdownsLab.Rproj" file
-3. A data folder containing data files for the labs
-4. A "LabTemplates" folder containing the R markdown templates for each lab.
+1.  A new folder titled "RMarkdownsLab"
+2.  Inside the folder you will see the "RMarkdownsLab.Rproj" file
+3.  A data folder containing data files for the labs
+4.  A "LabTemplates" folder containing the R markdown templates for each lab.
 
 To get started with Lab 1, follow these steps:
 
-1. copy the template file for lab 1, "Lab 01 Graphing_Student Name.Rmd", and place it into the "RMarkdownsLab" (copy it out of the template folder, and into the RMarkdownsLab folder).
-2. Rename the file to add your own name, eg., "Lab1GraphingMattCrump.Rmd"
-2. double-click the "RMarkdownsLab.Rproj" file
-3. R-studio will now load up.
-4. If you click the files tab, you will see all of the files and folders inside the "RMarkdownsLab" folder
-5. Click on your lab1 .rmd file, it will now load into the editor window. 
+1.  copy the template file for lab 1, "Lab 01 Graphing_Student Name.Rmd", and place it into the "RMarkdownsLab" (copy it out of the template folder, and into the RMarkdownsLab folder).
+2.  Rename the file to add your own name, eg., "Lab1GraphingMattCrump.Rmd"
+3.  double-click the "RMarkdownsLab.Rproj" file
+4.  R-studio will now load up.
+5.  If you click the files tab, you will see all of the files and folders inside the "RMarkdownsLab" folder
+6.  Click on your lab1 .rmd file, it will now load into the editor window.
 
 Each lab template .rmd file contains three main sections, one for each part of the lab. You will write things inside each section to complete the lab.
 
@@ -277,33 +270,81 @@ Follow this guide to get up running for Lab 1.
 
 R-studio is also in the cloud. This means that if you want to use R and R-studio through your web-browser you can do that without even installing R or R-studio on your computer. It's also free!
 
-1. sign up for an R-studio cloud account here: [https://rstudio.cloud](https://rstudio.cloud)
+1.  sign up for an R-studio cloud account here: <https://rstudio.cloud>
 
-2. You can make new R projects, work inside them, and everything is saved in the cloud!
+2.  You can make new R projects, work inside them, and everything is saved in the cloud!
 
-3. To see how everything would work, follow the steps in this video. You will need to download this [.zip file to your computer to get started](https://github.com/CrumpLab/statisticsLab/raw/master/RstudioCloud.zip)
+3.  To see how everything would work, follow the steps in this video. You will need to download this [.zip file to your computer to get started](https://github.com/CrumpLab/statisticsLab/raw/master/RstudioCloud.zip)
 
-The link to the video is [https://www.youtube.com/watch?v=WsbnV0t7FE4](https://www.youtube.com/watch?v=WsbnV0t7FE4), or you can watch it here:
+The link to the video is <https://www.youtube.com/watch?v=WsbnV0t7FE4>, or you can watch it here:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WsbnV0t7FE4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WsbnV0t7FE4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 
+</iframe>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Excel 
+## Excel
 
 ## SPSS
 
 ## JAMOVI
 
+## CogStat
+
+The CogStat version of the lab manual employes the latest CogStat relase (CogStat 2.5rc).
+
+### Software
+
+#### Introduction
+
+The purpose of this manual is to provide an easy and student-friendly guide for those who would like to learn the basics of statistics using CogStat. This manual is a supplement to Matthew J. C. Crump’s book “Answering Questions With Data - Introductory Statistics For Psychology Students” and an adaptation of his “Statistics Lab Manual” (<https://www.crumplab.com/statisticsLab/software.html>). Through eleven chapters, we will ask questions about data and answer them after running the corresponding analysis. Hopefully, after reading this manual and completing the exercises, you will gain a common understanding of how CogStat can help you with your work. On the other hand, it is important to note that this manual does not have any aspirations for extensive detailing in statistics or CogStat. We will show and explain different matters in CogStat, that are useful in practice and real-life but will not reflect on all the underlying theoretical arguments.
+
+#### Automatic data analysis
+
+In automatic data analysis, users do not have to choose individually which analysis to run; instead, they have to choose a question that they would like to answer. It is a powerful method for researchers and students, which is employed partially by many software, but CogStat relies on this method fully, when analyzing data. It helps to reduce human error, which could happen during the analysis or at the interpretation of the results. It is also a partial solution for the replication crisis. The replication crisis refers to the general issue where scientific results are often impossible to replicate. The replicability of research settings and outcomes is a requirement in science that cannot be simply missed. During the early years of the replication crisis, the existence of many previously described phenomena has been questioned due to this problem. Automatic data analysis can help with some of the issues mentioned above. (for more, see: <https://en.wikipedia.org/wiki/Replication_crisis#Background>)
+
+Many advantages in line with automatic data analysis can help to moderate the replication crisis and its negative effects. With automatic data analysis, users do not have to choose between loads of settings to run their test correctly. This spares a lot of time and leaves fewer opportunities for mistakes. There is also no need to test assumptions by the user manually since the program does it automatically and chooses the optimal test accordingly. This function is highly favourable, as it relies less on subjectivity; thus, two separate tests-results by two individuals will be identical. With this, the replicability of results could increase. There are some methods where the results highly depend on the chosen analysis because of the absence of consensus in many statistical procedures. This also affects the replicability negatively and might result in incorrect or misleading interpretations. Additionally, note that there are some cases when more analysis methods could be correct for an exact task, this might also cause some difficulty, as well as increase the subjectivity. Automatic data analysis employs a consensual pipeline based on the methodology literature, this reduces the freedom and subjectivity of the researcher and generates greater consensus. It is highly beneficial since mistakes stemming from, for example, lack of statistical knowledge or incorrect knowledge, performance errors, and P-hacking can be eliminated or at least decreased.
+
+#### CogStat
+
+CogStat is a statistical software that works with automatic data analysis and has an output designed to show the results in a dense, easily interpretable, and informative way (Krajcsi, 2021). CogStat employs the most common tests used in cognitive science research and makes them automated. This means that users cannot choose a single hypothesis test to run; instead, a more general question can be chosen, such as comparing groups. When running the analysis automatically in CogStat, we must provide the data with the appropriate measurement levels for the variables. Setting the right measurement levels is especially important in this method since the software relies heavily on the variable levels when choosing the right analysis to run. Measurement levels must be set before loading the data into CogStat since the software is not designed for editing data. Spreadsheets or statistical software can be used to set the required measurement levels. We also choose what variables we want to run the analysis on, depending on the relations and questions we would like to explore. After that, the software automatically checks the assumptions, runs the corresponding test, and provides an informative output with the data graphed and the most important descriptives and frequency traits without the user’s any other interference. This helps to understand the data and statistics more without the need to spend a lot of time untangling the technical details. The previously described optimized output is one of CogStat’s most important features. It shows the results in easy-to-understand divisions and also reports them in the current APA style. This makes reporting results faster and more precise, as it can be simply copied and pasted. The output is also well-structured as it is divided into three main parts (Raw data, Sample Properties, and Population Properties) in most cases.
+
+#### How to start with CogStat
+
+##### Downloading and installing the software
+
+The software is free to download from the official CogStat webpage (<https://www.cogstat.org/>) and runs on Windows, Mac, and Linux. (For more and help at the download and installation: <https://doc.cogstat.org/Installation>)
+
+##### Data
+
+There are many datasets used in this manual, and the majority of it is real data from the original manual by Matthew J. C. Crump (<https://github.com/CrumpLab/statistics/tree/master/data>), while others are generated with spreadsheet software. All the datasets that will be used in this manual are available in the CogSat package in the form of demo files. (Data used in this manual can be found in the folder “Haasz. Answering questions with data Lab Manual”.) These types of datasets can be loaded from there, in the following ways shown in the pictures below.
+
+![](images/DATA-02.png){width="332"}
+
+![](images/open%20demo%20data-02.png)
+
+After choosing the option “Data” and “Open demo data file” you can reach any demo data from the CogStat package. With “Open data file”, you can use any other dataset you have downloaded that is in the right format that CogStat can handle. You can also load data from different programs with the copy-paste function, using the clipboard. Simply select and copy the data you would like to use and paste it into the CogStat window. It can be especially important when you do not want to use the whole dataset for the analysis, so only some parts will be copied and pasted. Also, to open a file, you can drag and drop it into the CogStat window, too.
+
+##### Setting the measurement levels
+
+CogStat cannot be used for editing your data, meaning you have to use a spreadsheet or another statistical software to store and edit it. (It is another reason why the copy-and-paste function is helpful.) Before loading your data into CogStat, it is advised to check it and set all the measurement levels for all variables. Many file format is supported (e.g., Excel spreadsheet, OpenDocument spreadsheet, Text files, SPSS, Japs, Jamovi files, and others… ) (for more: <https://doc.cogstat.org/Handling-data>) (If you use the demo datafiles that belong to this manual, you will see that we set the measurement levels for you.)
+
+There are two methods to set measurement levels in the dataset. If the data is stored in a spreadsheet format (e.g. Microsoft Excel, Google Spreadsheet, etc.), a second row should be added, including int, ord, and nom for the interval, ordinal, and nominal measurement levels (second row, after the variable names). Note that ratio variables are also handled as intervals, and string variables will be set to nominal automatically. ![](images/measurements.png)
+
+Another way to set the measurement level is to use other statistical software, where you can adjust them, and after saving the data, you can open it with CogStat. For example, in SPSS, you can set the measurement levels and then open the file into the CogStat window. However, be aware that the measurement levels cannot be set in every statistical software, so in this case, information about measurement levels will be missing when importing your data from such source (e.g. R files or STATA files). If measurement levels for the dataset are not set before loading it into CogStat, CogStat will set it to unknown (unk) and, in most cases, will handle it as interval variables. Analysis can be run like this, but if it is not your intention to have your data handled as interval variables, then set the right measurement levels. For more on handling data: <https://doc.cogstat.org/Handling-data>.
+
+If you need additional information or would like to learn more about CogStat, there are many sources:
+
+-   A brief description of how to start using the software: <https://doc.cogstat.org/Quick-Start-Tutorial>
+-   The user documentation of the software: <https://doc.cogstat.org/>
+-   About the advantages of using CogStat: <https://docs.google.com/presentation/d/1dIb6f3yPvr8stMLS7b7qcBsgloqbcQj2b55NUT4D9vc/edit#slide=id.p>
+-   Using CogStat for your analysis: <https://docs.google.com/presentation/d/1_rnHhyD3pF9BZuqCkcFLWKhAbX1DfS8T5q-TxogqpZA/edit#slide=id.p>
+
+### Navigating in the manual
+
+From the next section of this Manual, you will solve specific problems through eleven chapters with the help of CogStat. There are some CogStat features, that, despite being fundamental and useful, only appear in later chapters. It is because we tried to follow the order of the other software guides employed in the manual, for transparency. On the other hand, automatic data analysis and CogStat have a unique philosophy which is often not in line with the manual data analysis point of view. This elemental difference in methodology might also contribute to some parts being located unnaturally. To help with finding the personally relevant parts for everyone, we named the chapters and subchapters carefully, so they cover their most important contents properly. It is advised to navigate in the table of contents if there is a specific feature of CogStat you need to find.
+
+There are many additional features and analyses to CogStat that are not included in this manual but are worth mentioning, for example, regressions, power analysis, reliability analysis (internal consistency reliability analysis and interrater reliability analysis) and (behavioural data) diffusion analysis. Results of Bayesian hypothesis tests are also provided in most cases and pivot tables can be created… Some other important features that are not mentioned in the following chapters are that in almost every dialogue a help button is provided with useful instructions. Another important feature is that spreadsheet software can be used as data view. This means that with every saved change in your spreadsheet, data also changes in CogStat and the analysis can be re-runned. These settings are not automatic, they must be set.
+
+![](images/reload.png) ![](images/reload2-01.png)
+
+With “Reload the actual data file”, the data that has been changed and saved in the spreadsheet software will also change in CogStat. With “Reload data file when changed”, the previous analysis will be re-runned with the changes made. 

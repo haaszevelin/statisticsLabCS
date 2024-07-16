@@ -347,4 +347,4 @@ There are many additional features and analyses to CogStat that are not included
 
 ![](images/reload.png) ![](images/reload2-01.png)
 
-With “Reload the actual data file”, the data that has been changed and saved in the spreadsheet software will also change in CogStat. With “Reload data file when changed”, the previous analysis will be re-runned with the changes made. 
+With “Reload the actual data file”, the data that has been changed and saved in the spreadsheet software will also change in CogStat. With “Reload data file when changed”, the previous analysis will be re-runned with the changes made.

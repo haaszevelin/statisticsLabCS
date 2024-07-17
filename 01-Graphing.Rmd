@@ -819,6 +819,109 @@ From “Analysis” you can find all the available analyses, to choose from. Kee
 In the dialogue, select the variable “Borough” and click on the arrow pointing to the right, or drag and drop the variable from “Available variables” to “Selected variable(s)”. Make sure that “frequencies” is ticked in and press “OK”. (Although, the “Frequencies” button is ticked by default.)
 
 #### Checking the results of the analysis
-Making the result interpretation even easier, the output’s structure in almost every analysis is very similar: First, you see the raw data, then the sample properties, and finally, the population properties. (1) In the raw data section of the output, the number of observed and missing values are counted. All missing values will be excluded from further operations. To understand your data and its parameters better in every case, graphs are also provided with the raw data only. (2) In the sample properties, descriptive statistics are included, with standardised effect sizes, and summaries with graphs. (3) Population properties come with estimations about the population from the taken sample could come from, and the hypothesis tests. (For more: https://doc.cogstat.org/Common-elements-of-the-analysis-results) 
 
-In the first main section of the output called “Raw data”, we can see a histogram with the Boroughs and the frequencies of film permits requested. This information also appears with numbers and percentages in the “Sample properties” part, the second main part of the CogStat output. 
+Making the result interpretation even easier, the output’s structure in almost every analysis is very similar: First, you see the raw data, then the sample properties, and finally, the population properties. (1) In the raw data section of the output, the number of observed and missing values are counted. All missing values will be excluded from further operations. To understand your data and its parameters better in every case, graphs are also provided with the raw data only. (2) In the sample properties, descriptive statistics are included, with standardised effect sizes, and summaries with graphs. (3) Population properties come with estimations about the population from the taken sample could come from, and the hypothesis tests. (For more: <https://doc.cogstat.org/Common-elements-of-the-analysis-results>)
+
+In the first main section of the output called “Raw data”, we can see a histogram with the Boroughs and the frequencies of film permits requested. This information also appears with numbers and percentages in the “Sample properties” part, the second main part of the CogStat output.
+
+![](images/exp.graph1.png)
+
+![](images/exp.des..png) After taking a look at this chart and table we can easily answer our original question. You can see that 50728 film permits were submitted from the observed cases row of raw data. Also, the histogram shows how these permits are divided, for example, in Brooklyn almost twice as many permits were submitted as in Queen’s. From the Frequencies table, you can tell that 50% of the film permits were requested in Manhattan, followed by Brooklyn, then Queen’s, Bronx, and finally, Staten Island, as both the graph and frequencies show this.
+
+### What kind of films are being made, and in what category?
+
+The variable “Category” gives us some information about what kind of films are being made. To find out, choose the menu “Explore variable” and remove “Borough” from the selected variables and add the variable “Category” to it, then press “ok”.
+
+![](images/1.4.1.png)
+
+![](images/1.4.2.png)
+
+![](images/1.4.3.png) In the “Raw data” part of the output, we can see, that most films were requested in the category “Television”. From “Sample properties” the “Frequencies” table shows us that “Television” is 54.1% of the film permits submitted. The only difference between this analysis and the previous analysis is that we changed the variable from “Borough” to “Category” when choosing the variables for analysis.
+
+### What are the sub-categories of films?
+
+If we would like to know what kind of sub-categories are there, we only have to do the same thing as in the previous task, with the variable “SubCategoryName”, so choose “Explore variable” and select the variable “SubCategoryName” for analysis. This way we got our histogram and our frequency results.
+
+![](images/1.4.4.png) As you see with long variable names the titles are pretty hard to see, because of this reason we recommend you to name your data with shorter names. We would like to add, that this problem is noticed and we are working on it to solve the readability of titles with long names.
+
+![](images/1.4.5.png) We can see that episodic series are the most common form of all of the subcategories, and the frequencies table shows us that it means 15416 permits, which is 30.4% of the total.
+
+### Categories by different Boroughs (Comparing groups)
+
+We know that several different films are requested in different categories as well as in different Boroughs, but do different Boroughs have different patterns for the kinds of categories of films they request permits for? Are there more TV shows in Brooklyn? How do we find out?
+
+Suppose, we want to make a plot for Categories by different Boroughs in CogStat. In that case, we can choose the “Compare groups” analysis (Ctrl+G) and select “Borough” as “Group” and “Category” as “Dependent variable” from the “Variables available” table and press “OK”.
+
+![](images/comparegroups.png)
+
+![](images/comparegroups2.png)
+
+The first thing shown in the output is the raw data. Here, we can see each of the observed cases of Boroughs (groups) and their missing data. 
+
+![](images/compraw.png)
+
+When we look at the relations of more variables, CogStat provides us with a mosaic plot, looking somewhat like this, still in the raw data section of the output.
+
+![](images/comapremosaic.png)
+
+This plot might look a little crowded since we have many categories for both variables and many of the names are quite long. Having fewer categories and shorter variable names makes every plot more pleasant-looking. We also get tables that show us the answer to our question, like these contingency tables.
+
+![](images/comparecont.png)
+
+From these tables, we can find out what kind of films are requested in different Boroughs. For example, we can interpret, that in Manhattan, “Television” is the most popular form of film, or that in Manhattan “Television” is more requested than in Brooklyn or in any other borough.
+
+#### Displaying the results graphically
+
+Graphs shown in the CogStat output are designed in a way to reflect the measurement levels of the variables. The differences are shown in the style of each axis. Solid lines are used for interval, dashed lines for ordinals, and dots for nominal variables. Solid lines for intervals represent continuity, and dashed lines show that there is order to be found between several data points, but there is not any general connection between them; finally, the dotted line for nominals represents that there is no relation or order between the values.
+
+If you are not happy with the look of the plot CogStat provided by default, there is an option to change the appearance of graphs, but this will not influence the design of the lines mentioned earlier. To manage this, select preferences, then chart theme. (e.g., ggplot is a very similar theme to the one used in R).
+
+![](images/preferences2.png)
+
+![](images/charttheme.png)
+
+Another method is to change the “Image format” to “SVG” and choose a program, in which you can make changes to the graph, so you can edit it (e.g. in LibreOffice). Note that you cannot manually change the plots in CogStat. (for more: <https://doc.cogstat.org/Displaying-the-data-and-results-graphically>)
+
+### Life Expectancy Histogram - How long do people live worldwide according to this dataset?
+
+Gapminder (<https://www.gapminder.org/>) is an organisation that collects some really interesting worldwide data. They also make visualization tools for looking at the data. There are many examples, and the tools are built right into their website so you can try out Gapminder Tools (<https://www.gapminder.org/tools/#$chart-type=bubbles&url=v2>) as well.
+
+For the next part, we will use the dataset “gapminder”, so load the data into CogStat. We would like to know how long people live all around the world according to this dataset. To find out the answer we will make a histogram. We have many numbers for life expectancy in the column “lifeExp”. This is a big sample, full of numbers for 142 countries, as data were collected throughout several years. It is easy to make a histogram to view the distribution, but this task is a little different from the previous ones shown in this chapter. Now we work with interval variables and not nominals as before. First, select “Explore variable” then select the variable “lifeExp” and press “OK”. This will give us a histogram of the distribution of life expectancy at the end of the Sample properties part.
+
+![](images/lieexphisto.png)
+
+Another difference in this task is, that this time we do not look for the traits of groups individually. For example, we do not look at how many people live in each country separately, but we look at all the countries at once divided by age. The bars represent different age groups here, but they consist of people from all over the world. On axis X, we can see the life expectancies that appear in our dataset, and on axis Y, we see how many times those life expectancies appear. According to our histogram, we can say, that the most common life expectancy in the data observed is somewhere between the ages of seventy and eighty.
+
+### Life expectancy: How the life expectancy changes for Hungary throughout the years?
+
+It is a bit different if we want to know how life expectancy changes in one country over the years. While in the previous task, we wanted to find out what life expectancies are the most common worldwide, in this task, we are curious about how the life expectancy changes in one country over the years. In CogStat, we cannot split files, but we can import our data accordingly. In order to solve this task, we changed the dataset, so that only data belonging to Hungary appears in the “gapminder_hungarian_data” dataset. Load this data from the demo data.
+
+In CogStat, we can choose “Explore relation of variable pair” and put “lifeExp” and “year” from “Available variables” to “Selected variables” and press “OK”.
+
+![](images/variablepair1.png)
+
+or
+
+![](images/variablepair2.png)
+
+At the top of the output, we can see a scatterplot with the raw data and the trend of life expectancy in Hungary. We can say that the Hungarian life expectancy has been rising over the years and it especially looks more promising since the 1990s.
+
+![](images/variablepairplot.png)
+
+### Using the results pane in CogStat
+
+In the Results menu, you can find some functions that make handling the results pane easier. For example, you can delete it with the “Clear results” menu.
+
+![](images/clearresults.png)
+
+If there is something specific you would like to find in the output choose “Find text…”. With the increase or decrease text size options, the output’s text sizes can be adjusted. Note that this will not change the size of the charts. With the “Test is editable” option on, the text can be modified by adding some comments. If you choose “Save results” the output will be saved in an HTML format, with “Save results as…” you can choose a file to save to, and with “Save results” the modifications will be saved in the previously assigned file. We have to mention here, that sometimes you may not want to save the output since it is often faster to re-run some tests than searching for the saved files on your computer. (for more: <https://doc.cogstat.org/Handling-output>)
+
+### Not happy with what CogStat provided?
+
+As you already noticed, CogStat chooses what should be calculated or displayed. What if you wanted to run a different test instead of the one that runs automatically? First of all, following the recommendations of textbooks and methodological literature and careful considerations of the developers, CogStat provides calculations that are reasonable default values. Using a recommended or consensual pipeline is a good thing: too much subjectivity in choosing the methods during data analysis or in interpreting the results is one of the causes of unreliable and hard or even impossible-to-replicate research settings and outcomes. On the other hand, you may have additional considerations for which the default results are not appropriate. In those cases, you may use a classic, individual analysis software. If you think that the default analysis pipeline that CogStat provides should be modified or updated, you can contact us and we will consider modifying the analysis pipeline in a future CogStat release. (for more: <https://doc.cogstat.org/Suggest-a-new-feature>)
+
+![](images/feature.png)
+
+You might think that CogStat calculated your result incorrectly. In some cases, CogStat calculates things intentionally differently than other software packages. In those cases, the developers think that it is better to use a different method than what you find in other software packages (find more information at <https://doc.cogstat.org/Differences-in-calculations-between-CogStat-and-other-programs>). In some other cases, the modules CogStat relies on may include a bug, and the calculation is incorrect. If you think that this is the case, you can report the bug. (for more: <https://doc.cogstat.org/Report-a-bug>)
+
+![](images/bug-01.png)

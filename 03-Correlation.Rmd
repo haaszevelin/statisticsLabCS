@@ -522,7 +522,7 @@ In this chapter, we will run correlations with CogStat and interpret what we see
 
 Correlation can be computed between any two ordinal or interval variables. When we run a correlation, we would like to know something about the relations between two variables. In CogStat, this matter can be investigated with the “Explore relations of variable par” analysis.
 
-#### Does a country's measure for “Freedom to make life choices” correlate with that country's measure for "Confidence in national government"?
+### Does a country's measure for “Freedom to make life choices” correlate with that country's measure for "Confidence in national government"?
 
 First, load into CogStat and then take a look at the “WHR2018” dataset. You should be able to see that there are data for many different countries across different years. There are lots of different kinds of measures, and each is given a name.
 
